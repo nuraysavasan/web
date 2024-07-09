@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        
+        </style>
+<head>
+  <script src="https://kit.fontawesome.com/f9cb6cfde4.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="/static/stlyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+  <section id="menu">
+    <div id="logo">Marka Adı</div>
+    <nav>
+        <a href="#anasayfa"><i class="fa-solid fa-house ikon"></i>Anasayfa</a>
+        <a href="#hakkimizda"><i class="fa-solid fa-info ikon"></i>Hakkımızda</a>
+        <a href="#iletisim"><i class="fa-solid fa-phone ikon"></i>İletişim</a>
+    </nav>
+</section>
+    <div class="container">
+        <div style="text-align: center;">
+        <h1>Ürün Adı Olabilir</h1>
+    </div>
+        <div style="text-align: center;">
+        <video controls playsinline autoplay  loop width="1000" height="600" >
+            <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4">
+            <track src="{{ url_for('static', filename='subtitle.vtt') }}" kind="subtitles" srclang="en" label="Türkçe" default>
+            Your browser does not support the video tag.
+        </video>
+         </div>
+         <div class="contact-form-wrapper">
+        <div class="contact-form">
+            <h2>Bize Ulaşın!</h2>
+            <form action="/submit" method="post">
+                <label for="name">İsim-Soyisim:</label>
+                <input type="text" id="name" name="name" placeholder="Adıınz..">
+                <label for="surname">Şirket İsmi:</label>
+                <input type="text" id="surname" name="surname" placeholder="Şirket İsmi..">
+                <label for="phone">Telefon Numaraız:</label>
+                <input type="text" id="phone" name="phone" placeholder="Telefon Numaranız..">
+                <input type="submit" value="Submit" name="Kaydet">
+            </form>
+        </div>
+        
+    </div>
+    <section class="anasayfa" id="anasayfa">
+     <h1>Anasayfa</h1>
+      <img src="{{ url_for('static', filename='about.jpg') }}" alt="Hakkımızda Fotoğrafı" class="about-image">
+      <p>Sayın Döner Kurutucu Kullanıcıları,
+        Size, Döner Kurutucular için özel olarak ürettiğimiz, patentli ürünümüzden kısaca bahsetmek istiyorum.
+        Mevcut döner  kurutucular, yüzeylerinden yüksek miktarda ısı kaybetmektedir. Buna önlem olarak taş yünü veya cam yünü kaplayarak ısı izolasyonu sağlanmaya çalışılmaktadır. Fakat bu izolasyon, yakıt tüketiminde ciddi bir düşüşe sebep olmamaktadır.
+        Bu soruna yönelik geliştirdiğimiz patentli sistem, döner kurutucunuzun yüzeyinden kaybedilen ısıyı sıfıra çok yakın bir değere düşürmektedir. Bu konuda iddialıyız. Kendi fırınımızda uyguladığımız bu patentli sistem ile %20 civarında yakıt tasarrufu elde ettik. Bu sebeple firmamız yapacağınız enerji tasarrufunun garantisini verebilmektedir. 
+        Uygulamamız hem mevcut fırınlara, hem de yeni fırınlara uygulanabilmektedir. Hiçbir bakım gerektirmez, ömürlüktür. Uygulama kendisini çok kısa sürede amorti edebilmektedir.
+        Bu konuda detaylı bilgiyi size iletmemiz için aşağıdaki çok kısa rezervasyon formunu doldurmanız, email atmanız veya telefon numarasından bize ulaşmanız yeterlidir. Uygun zamanınızda sizi ziyaret edip  sistemimizin çok sayıdaki avantajını anlatmak isteriz.
+        </p>
+    </section>
+    </div>
+    <section class="hakkimizda" id="hakkimizda">
+      <h1>Hakkımızda</h1>
+       <p>Bu bölümde firmanız hakkında kısa bir paragraf yer alacak. Firmanızın tarihi, hizmetleri ve misyonu hakkında bilgiler verebilirsiniz. Bu alan, ziyaretçilerin firmanız hakkında daha fazla bilgi edinmelerine yardımcı olacaktır.</p>
+     </section>
+     <section class="iletisim" id="iletisim">
+      <h1>İletişim</h1>
+      <div class="row">
+        <div class="contact-info">
+            <h2>Firma Ünvanı</h2>
+            <p>Adres: Örnek Cad. No: 123, İzmir, Türkiye</p>
+            <p>Telefon: +90 555 555 5555</p>
+            <p>Email: info@firma.com</p>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3130.456485340307!2d26.635353813739016!3d38.31525870000033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb905dcd88e679%3A0x325bc54080b37c33!2zVEVLTk9QQVJLIMSwWk3EsFI!5e0!3m2!1str!2str!4v1720510926926!5m2!1str!2str" width="700" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+     </section>
+</body>
+</html>
